@@ -5,34 +5,28 @@ const items = [
   { title: "Saga #1", price: 8, owned: true },
 ];
 
-// const titles = items.map(item => item.title);
+function render() {
+    const list = document.querySelector("#list");
+    list.textContent = ''
 
-// console.log(titles);
+    for (const item of items) {
+        const li = document.createElement("li")
+       
 
-// const owned = items.filter(item => item.owned == true);
+        li.textContent = `${item.title} - ${item.price}€ ${item.owned ? "✓" : ""}`
+        list.append(li)
 
-// console.log(owned);
+        li.addEventListener("click", () => {
+            item.owned = !item.owned;
+            render()
+        })
+        
 
-// const mostExpensive = items.find(item => item.price > 40);
+        
+    }
 
-// console.log(mostExpensive);
+    
+}
 
-// const sum = items.reduce((acc, item) => acc + item.price, 0)
+render();
 
-// console.log(sum);
-
-// const sumNotOwned = items.filter(item => item.owned == false).reduce((acc, item) => acc + item.price, 0)
-
-// console.log(sumNotOwned)
-
-const notOwnedCheap = items.filter(item => !item.owned && item.price < 40)
-
-console.log(notOwnedCheap);
-
-const numberOwned = items.filter(item => item.owned).length
-
-console.log(numberOwned);
-
-const ifOneCheap = items.some(item => item.price < 10);
-
-console.log(ifOneCheap)

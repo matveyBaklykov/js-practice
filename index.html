@@ -6,7 +6,18 @@
     <title>Practice</title>
 </head>
 <body>
-    <h1>Practice</h1>
+    <h1>My collection</h1>
+    <ul id="list"></ul>
     <script src="script.js"></script>
+    
+    <form>
+        <label for="title">Название</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="price">Цена</label>
+        <input type="number" id="price" name="price" min="0" required>
+
+        <button type="submit">Добавить</button>
+    </form>
 </body>
 </html>
